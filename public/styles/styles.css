@@ -1,0 +1,136 @@
+* {
+    font-family: "Comfortaa", "Ubuntu Mono", "monospace", Arial, Helvetica, sans-serif;
+    font-size:large;
+}
+
+body {
+    background-color:beige;
+    margin: 0;
+}
+
+header {
+    display: flex;  
+    justify-content: space-between;
+    background-color:turquoise;
+    padding: 20px;
+    border-bottom: solid black;
+    
+}
+
+.invisible {
+    display: none;
+}
+
+.title {
+    display: flex;
+    padding-left: 40%;
+    position: absolute;
+    justify-content: center;
+    align-content: center;
+    font-size:1.5em;
+    transform: translateY(-20%);
+}
+
+.container { 
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5%;
+}
+
+.container img {
+    margin-bottom: 2%;
+    width: 25%;
+    height: 25%;
+    border: 7px solid black;
+    border-radius: 20px;
+}
+
+.container video {
+    margin-bottom: 2%;
+}
+
+.form {
+    display: flex;
+    flex-direction:column;
+    background-color: white;
+    border: solid black;
+    padding: 20px;
+    border-radius : 20px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 25%;
+    margin-right: 25%;
+    justify-content: center; 
+}
+
+.form p  { 
+    align-self: center;
+}
+
+.form input { 
+    margin-left: 10px;
+    border: solid black;
+    border-radius: 5px;
+    border-width: 2px;
+}
+
+.form form { 
+    align-self: center;
+    padding-left: 15px;
+}
+
+.error-header { 
+    background-color: red;
+}
+
+.error-message { 
+    display: flex;
+    margin-top: 10%;
+    justify-content: center;
+    margin-left: 40%;
+    margin-right: 40%;
+    background-color: white;
+    border: solid black;
+    padding: 20px;
+    border-radius : 20px;
+}
+
+video {
+    width: 40%;
+    height: 40%;
+    border: 7px solid black;
+    border-radius: 20px;
+}
+
+header a {
+    padding: 10px;
+}
+
+a {
+    color: black;
+}
+
+li {
+    margin-left: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+li a {
+    font-size: 1.5em;
+}
+
+a:link { 
+    text-decoration: none; 
+}
+
+a:hover { 
+    color: white;
+}
+
+li a:hover { 
+    color: turquoise;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Online galerija - glavna stranica</title>
+        <link rel="manifest" href="../manifest.json">
+        <link rel="stylesheet" href="../styles/styles.css">
+        <link rel="icon" type="image/x-icon" href="../favicon.ico">
+        <script src="../scripts/photo.js"></script>
+    </head>
+    <body>
+        <header>
+            <% if (name !== undefined) { %>
+                <span class="user-display">Dobro došli, <%= name %></span>
+            <% } else { %>
+                <span class="user-display">Dobro došli</span>
+            <% } %>
+            <span class="links">
+                <span><a href="/gallery">Moja galerija</a></span>
+                <span><a href="/logout">Odjava</a></span>
+            </span>
+            <div class="title">Online galerija</div>
+        </header>
+            <div id="cameraContainer" class="invisible">
+                <p>Nova fotografija:</p>
+                <video id="video">Snimanje kamerom nije dostupno.</video>
+                <button id="startButton">Snimi fotografiju</button>
+            </div>
+            <div class="invisible">
+                <canvas id="canvas">
+                </canvas>
+            </div>
+            <div id="photoContainer" class="invisible">
+              <img id="photo"> 
+              <button id="sendButton">Spremi fotografiju</button>
+            </div>
+            <div class="form">
+                <p>Učitavanje fotografija:</p>
+                <form action="/upload" method="POST" enctype="multipart/form-data">
+                    <input type="file" accept="image/*" name="picture" multiple/>
+                    <input type="submit" value="Učitaj">
+                </form>
+            </div>
+            <script>
+                navigator.serviceWorker.register('../sw.js')
+                    .then(reg => console.log('SW registered!', reg))
+                    .catch(err => console.error('Error registering service worker', err));
+            </script>       
+    </body>
+</html>

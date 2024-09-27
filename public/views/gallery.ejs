@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Online galerija - Moje slike</title>
+        <link rel="manifest" href="../manifest.json">
+        <link rel="stylesheet" href="../styles/styles.css">
+    </head>
+    <body>
+        <header>
+            <% if (name !== undefined) { %>
+                <span class="user-display">Dobro došli, <%= name %></span>
+            <% } else { %>
+                <span class="user-display">Dobro došli</span>
+            <% } %>
+            <span class="links">
+                <span><a href="/">Glavna stranica</a></span>
+                <span><a href="/logout">Odjava</a></span>
+            </span>
+            <div class="title">Moje slike</div>
+        </header>
+        <% if (images !== undefined) { %>
+            <% for (let image of images) { %>
+                <div class="container">
+                    <img src="../../uploads/<%= image.filename %>" alt="Image">
+                    <form action="/delete" method="POST">
+                        <input type="hidden" name="userId" value="<%= userId %>">
+                        <input type="hidden" name="imageFilename" value="<%= image.filename %>">
+                        <input type="submit" value="Obriši">
+                    </form>
+                </div>
+            <% } %>
+        <% } %>
+    </body>
+</html>
